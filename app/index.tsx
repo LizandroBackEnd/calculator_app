@@ -57,11 +57,15 @@ const App = () => {
           value={num2}
           onChangeText={setnum2}
           style={{ marginBottom: 10 }}
-        />
-        <Button mode="contained" onPress={() => handleOperation('suma')} style={{ marginBottom: 10 }}>Sumar</Button>
-        <Button mode="contained" onPress={() => handleOperation('resta')} style={{ marginBottom: 10 }}>Restar</Button>
-        <Button mode="contained" onPress={() => handleOperation('multiplicacion')} style={{ marginBottom: 10 }}>Multiplicar</Button>
-        <Button mode="contained" onPress={() => handleOperation('division')} style={{ marginBottom: 10 }}>Dividir</Button>
+        /> 
+        <View style={styles.buttonContainer}>  
+         <Button mode="contained" onPress={() => handleOperation('suma')} style={styles.button}>Sumar</Button>
+         <Button mode="contained" onPress={() => handleOperation('resta')} style={styles.button}>Restar</Button>
+         <Button mode="contained" onPress={() => handleOperation('multiplicacion')} style={styles.button}>Multiplicar</Button>
+         <Button mode="contained" onPress={() => handleOperation('division')} style={styles.button}>Dividir</Button>
+         
+        </View>
+
         <Button mode="contained" onPress={speakResult}>Hablar resultado</Button>
       </View>
     </PaperProvider>
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    padding: 20,
+    padding: 20, 
   },
   title: {
     fontSize: 24,
@@ -91,7 +95,15 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 20,
+    marginBottom: 20, 
+    flexWrap: 'wrap',
+  }, 
+  button: { 
+    flexBasis: '48%', 
+    justifyContent: 'center',  
+    alignItems: 'center',
+    height: 90,  
+    marginBottom: 10,
   },
   resultContainer: {
     alignItems: 'center',
